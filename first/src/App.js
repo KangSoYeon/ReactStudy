@@ -55,8 +55,8 @@ class App extends Component {
     //기존의 값들을 복사하고, checked 값을 덮어쓰기
     //배열의 값을 직접 수정하면 절대 안됨!! 전개연산자를 이용하여 업데이트 해야함
     nextTodos[index] = {
-      ...selected,
-      checked: !selected.checked
+      ...selected, //선택한 객체의 정보를 불러오고
+      checked: !selected.checked //checked 값만 다시 덮어쓴 것
     };
 
     this.setState({
@@ -81,7 +81,8 @@ class App extends Component {
     const {
       handleChange,
       handleCreate,
-      handleKeyPress
+      handleKeyPress,
+      handleToggle
     } = this;
 
     return (

@@ -33,6 +33,40 @@ HTML코드가 DOM은 아님. DevTools(브라우저에서 지원하는 개발자 
 * state : 컴포넌트 내부에서 선언하며 내부에서 값을 변경할 수 있음(동적인 데이터)
 
 
+### React의 특별한점
+
+리액트에서는 배열의 push를 사용하면 안됨. --> concat을 사용하여 데이터 추가
+```
+handleCreate = () => {
+    const {input, todos} = this.state;
+    this.setState({
+      input: '',
+      todos: todos.concat({ //concat을 사용하여 배열에 추가
+        id: this.id++,
+        text: input,
+        checked: false
+      })
+    });
+  }
+```
+
+배열의 값을 직접 수정하면 절대 안됨!! 전개연산자를 이용하여 업데이트 해야함
+
+```
+nextTodos[index] = {
+  ...selected, //선택한 객체의 정보를 불러오고
+  checked: !selected.checked //checked 값만 다시 덮어쓴 것
+};
+```
+
+각 todo의 요소에 대해 todo.id !== id 의 true, false를 반환
+filter로 true값이 반환 된 값만 배열로 다시 생성
+화살표 함수와 filter
+```
+todos: todos.filter(todo => todo.id !== id) 
+```
+
+
 
 ### 서버 시작하는 법
 ```
