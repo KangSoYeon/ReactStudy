@@ -35,7 +35,7 @@ HTML코드가 DOM은 아님. DevTools(브라우저에서 지원하는 개발자 
 
 ### React의 특별한점
 
-리액트에서는 배열의 push를 사용하면 안됨. --> concat을 사용하여 데이터 추가
+#### 리액트에서는 배열의 push를 사용하면 안됨. --> concat을 사용하여 데이터 추가
 ```
 handleCreate = () => {
     const {input, todos} = this.state;
@@ -50,7 +50,7 @@ handleCreate = () => {
   }
 ```
 
-배열의 값을 직접 수정하면 절대 안됨!! 전개연산자를 이용하여 업데이트 해야함
+#### 배열의 값을 직접 수정하면 절대 안됨!! 전개연산자를 이용하여 업데이트 해야함
 
 ```
 nextTodos[index] = {
@@ -59,9 +59,9 @@ nextTodos[index] = {
 };
 ```
 
-각 todo의 요소에 대해 todo.id !== id 의 true, false를 반환
-filter로 true값이 반환 된 값만 배열로 다시 생성
-화살표 함수와 filter
+* 각 todo의 요소에 대해 todo.id !== id 의 true, false를 반환
+* filter로 true값이 반환 된 값만 배열로 다시 생성
+* 화살표 함수와 filter
 ```
 todos: todos.filter(todo => todo.id !== id) 
 ```
