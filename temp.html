@@ -2,13 +2,23 @@
 <html>
     <head>
         <title>Document Object Model</title>
+        <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
         <script>
-            window.onload = function(){
-                alert('Process -0');
-            };
+           $(document).ready(function(){
+                var object = { name : '윤인성'};
+                $.extend(object, {
+                    region: '서울특별시 강서구',
+                    part: '세컨드 기타'
+                });
+
+                var output = '';
+                $.each(object, function(key, item){
+                    output += key + ': '+ item +'\n';
+                });
+                alert(output);
+           });
+            
         </script>
     </head>
-    <body>
-        <h1>ㅗㅑㅗㅑㅗㅑ</h1>
     </body>
 </html>

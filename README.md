@@ -65,12 +65,23 @@ nextTodos[index] = {
 ```
 todos: todos.filter(todo => todo.id !== id) 
 ```
-
+### 새로운 project 만드는법
+```
+npx create-react-app 프로젝트명
+```
 
 
 ### 서버 시작하는 법
 ```
-yarn start
+yarn start //cmd에서
+npm run start //vscode 터미널에서
+```
+
+### build하는 법
+```
+yarn build
+serve -s build
+yarn global add serve
 ```
 
 React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리.
